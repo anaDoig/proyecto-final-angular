@@ -1,0 +1,70 @@
+{
+    "routes": [
+      {
+        "title": "Cercedilla a Siete Picos ",
+        "description": "Esta es una ruta que tenía prometida a uno de los picos que más me gusta. Se trata del 2º de los Siete Picos, bien se merece una ruta para el solo. Cuando estás en él, se te olvida todo. Es una ruta un poco exigente, pero más bien por el terreno que hay que pisar, que termina un poco con tus fuerzas.",
+        "location": "Cercedilla, Comunidad de Madrid",
+        "imgs": ["https://s0.wklcdn.com/image_0/15093/10718326/6478776Master.jpg", "https://s0.wklcdn.com/image_0/15093/10718326/6478782.700x525.jpg", "https://s1.wklcdn.com/image_0/15093/10718326/6478783.700x525.jpg"],
+        "dificulty": "baja",
+        "rating": 4.81,
+        "distance": 19.54,
+        "category": "A pie",
+        "id": 1
+      },
+      {
+        "title": "Pradera de Ordesa",
+        "description": "Ruta que parte de la Pradera de Ordesa y pasa por la cascada de Arripas, cascada de la Cueva, cascada de los Estrechos, gradas de Soaso y Cola de Caballo",
+        "location": "Cercedilla, Comunidad de Madrid",
+        "imgs": ["https://s1.wklcdn.com/image_42/1263181/28798909/18394159.700x525.jpg", "https://s1.wklcdn.com/image_42/1263181/28798909/18394165.700x525.jpg", "https://s2.wklcdn.com/image_42/1263181/28798909/18394172.700x525.jpg"],
+        "dificulty": "media",
+        "rating": 4.94,
+        "distance": 16.96,
+        "category": "En bici",
+        "id": 2
+      },
+      {
+        "title": "Collserola Vallvidrera",
+        "description": "Recorrido que inicio en la zona del Baixador de Vallvidrera, donde llego en coche pero se puede ir comodamente y mas barato con los Ferrocarriles Catalanes. Especialmente agradable y bonito recorrido ya que en todo momento había previsto el paso por multitud de zonas con senderos, fuentes, sombra y lugares de interés.",
+        "location": "Cercedilla, Comunidad de Madrid",
+        "imgs": ["https://s1.wklcdn.com/image_27/827746/26436164/16885168.700x525.jpg", "https://s0.wklcdn.com/image_27/827746/26436164/16885173.700x525.jpg", "https://s1.wklcdn.com/image_27/827746/26436165/16885348Master.jpg"],
+        "dificulty": "media",
+        "rating": 4.79,
+        "distance": 12.67,
+        "category": "A caballo",
+        "id": 3
+      },
+      {
+        "title": "Cruz del Sierro desde la Font del Marionet",
+        "description": "Ya hacia tiempo que queria hacer esta ruta y es más sencilla de lo que creía, sí es verdad que tiene algun que otro tramo complicado pero no tiene una gran dificultad salvo que se tiene que ir sorteando y trepando piedras, pero no mucho tramo",
+        "location": "Cerca de Serra, Valencia",
+        "imgs": ["https://s0.wklcdn.com/image_10/321744/16820568/10563912Master.jpg", "hhttps://s2.wklcdn.com/image_10/321744/16820568/10563941Master.jpg", "https://s0.wklcdn.com/image_10/321744/16820573/10564140Master.jpg"],
+        "dificulty": "media",
+        "rating": 4.88,
+        "distance": 7.96,
+        "category": "A pie",
+        "id": 4
+      },
+      {
+        "title": "Desfiladero de Las Xanas",
+        "description": "Este desfiladero de la Cordillera Cantábrica del norte asturiano, llega a alcanzar una profundidad de hasta 80-90 metros, y tiene una longitud de alrededor de dos kilómetros de garganta tallados en la cara Oeste de los montes de la Sierra del Aramo con increíble audacia por el arroyo Viescas o de las Xanas que se dirige en su descenso encabritado en una sucesión de estratos calizos a desembocar hacia al río Trubia.",
+        "location": "Cerca de Villanueva, Asturias",
+        "imgs": ["https://s2.wklcdn.com/image_30/903981/10595997/6394400.700x525.jpg", "https://s1.wklcdn.com/image_30/903981/10595997/6394408.700x525.jpg", "https://s2.wklcdn.com/image_30/903981/10596002/6394469Master.jpg"],
+        "dificulty": "media",
+        "rating": 4.78,
+        "distance": 9.35,
+        "category": "",
+        "id": 5
+      },
+      {
+        "title": "Los órganos de la orotava circular desde la caldera",
+        "description": "Este desfiladero de la Cordillera Cantábrica del norte asturiano, llega a alcanzar una profundidad de hasta 80-90 metros, y tiene una longitud de alrededor de dos kilómetros de garganta tallados en la cara Oeste de los montes de la Sierra del Aramo con increíble audacia por el arroyo Viescas o de las Xanas que se dirige en su descenso encabritado en una sucesión de estratos calizos a desembocar hacia al río Trubia.",
+        "location": "Cerca de Aguamansa, Canarias",
+        "imgs": ["https://s2.wklcdn.com/image_30/903981/10595997/6394400.700x525.jpg", "https://s1.wklcdn.com/image_30/903981/10595997/6394408.700x525.jpg", "https://s2.wklcdn.com/image_30/903981/10596002/6394469Master.jpg"],
+        "dificulty": "media",
+        "rating": 4.78,
+        "distance": 9.35,
+        "category": "A pie",
+        "id": 6
+      }
+    ]
+}
