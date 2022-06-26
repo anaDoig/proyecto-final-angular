@@ -9,15 +9,15 @@ h1 {
 }
 
 h2 {
-    @inlcude titles($green, size(48));
+    @include titles($green, size(48));
 }
 
 h3 {
-    @inlcude titles($green, size(32));
+    @include titles($green, size(32));
 }
 
 h4 {
-    @inlcude titles($green, size(24));
+    @include titles($green, size(24));
 }
 
 .main-btn {
