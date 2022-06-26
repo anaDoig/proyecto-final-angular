@@ -1,0 +1,51 @@
+body {
+    font-family: $fontFamily;
+    font-size: size(16);
+    color: $grey;
+}
+
+h1 {
+    @include titles($white, size(72));
+}
+
+h2 {
+    @inlcude titles($green, size(48));
+}
+
+h3 {
+    @inlcude titles($green, size(32));
+}
+
+h4 {
+    @inlcude titles($green, size(24));
+}
+
+.main-btn {
+    @include button($green, $beige, $beige, size(165));
+}
+
+.secondary-btn {
+    @include button($white, $green, $green, size(130));
+}
+
+
+/* Grid */
+
+.container {
+    width: 100%;
+    max-width: size($mainWidth);
+    margin: 0 auto;
+}
+
+.col2 {
+    @include columns-container(size(20), 50%, size(20));
+    div {
+        border: 1px solid #ccc;
+    }
+}
+
+.col3 {
+    @include columns-container(size(115), 33.3%, size(20));
+}
+
+/* End of Grid */
