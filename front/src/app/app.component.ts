@@ -17,8 +17,7 @@ export class AppComponent {
     this.journey.getRoutes().subscribe(
       (data: any) => {
         // Handle result
-        this.journey.journeyLocal  = data;
-        console.log(this.journey.journeyLocal);
+        this.journey.journeyLocal  = data;       
       },
       error => {
         //Log error 
@@ -26,5 +25,7 @@ export class AppComponent {
       }
     );
   }
+
+
 }
 
