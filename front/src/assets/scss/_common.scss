@@ -20,6 +20,11 @@ h4 {
     @include titles($green, size(24));
 }
 
+img {
+    width: 100%;
+}
+
+
 .main-btn {
     @include button($green, $beige, $beige, size(165));
 }
