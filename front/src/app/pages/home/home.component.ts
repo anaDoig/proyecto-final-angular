@@ -8,9 +8,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor( public journeys: JourneyService) { }
 
-  ngOnInit(): void {
+  //Guardar el json en una array de objecto nada más iniciar la app para evitar sobrecribir el json.
+  //Se trabajará con la array, almenos durante el desarrollo.
+  ngOnInit(): void {        
+    this.journeys.getRoutes().subscribe(
+      (data: any) => {
+        // Handle result
+        this.journeys.journeyLocal = data;              
+      },
+      error => {
+        //Log error 
+        console.log(error);
+      }
+    );
   }
 
 }

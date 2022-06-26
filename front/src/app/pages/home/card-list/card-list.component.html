@@ -1,1 +1,25 @@
-<p>card-list works!</p>
+<article class="card">
+    <div class="card__header">
+        <p class="card__category">{{journey.category}}</p>
+        <h3 class="card__title">{{journey.title}}</h3>
+        <p class="card__location">{{journey.location}}</p>
+        <div class="features">
+            <div class="features__wrapper">
+                <p class="features__title">Distancia</p>
+                <p class="features__content">{{journey.distance}} km</p>
+            </div>
+            <div class="features__wrapper">
+                <p class="features__title">Dificultad</p>
+                <p class="features__content">{{journey.dificulty}}</p>
+            </div>
+            <div class="features__wrapper">
+                <p class="features__title">Puntuación</p>
+                <p class="features__content">{{journey.rating}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="card__body">
+        <img width="600" class="card__image" [src]="journey.imgs[0]" [alt]="journey.title">
+        <a class="card__button" href="#"><span class="material-icon material-symbols-outlined">add</span></a>
+    </div>
+</article>

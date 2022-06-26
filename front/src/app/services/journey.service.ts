@@ -29,7 +29,7 @@ export class JourneyService {
 
   //Funcion para hacer la petición a la API
   getRoutes() {
-    return this.httpClient.get( this.httpApi + "routes")
+    return this.httpClient.get("http://localhost:3000/routes")
   }
 
   //Funcion para postear un nuevo journey
