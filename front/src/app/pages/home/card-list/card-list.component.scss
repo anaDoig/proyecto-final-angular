@@ -34,10 +34,7 @@
     .features {
         border-top: 2px solid white;
         @include columns-container(size(15), auto, size(20));
-        flex-basis: auto;
         padding: size(20) size(40) 0;
-
-
 
         &__title {
             margin-bottom: size(15);
