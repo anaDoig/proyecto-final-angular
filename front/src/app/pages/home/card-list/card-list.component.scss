@@ -1,22 +1,31 @@
 .card {
+    // background: $beiges;
     &__header {
+        padding: size(40);
     }
     &__body {
+        position: relative;
     }
-    &__location {
-        
-    }
-    .features {
-        &__title {
-        }
-        &__content {
+/*     &__location {
 
+    } */
+    .features {
+        border: 2px solid white;
+
+/*         &__title {
+        } */
+        &__content {
+            // @extend .h3;
         }
     }
     &__image {
-
+        width: 100%;
+        height: auto;
     }
     &__button {
-        
+        position: absolute;
+        bottom: size(15);
+        right: size(15);
+        // @include button($green, $white, transparent, size(0));
     }
 }
