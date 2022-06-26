@@ -44,9 +44,6 @@ img {
 
 .col2 {
     @include columns-container(size(20), 50%, size(20));
-    div {
-        border: 1px solid #ccc;
-    }
 }
 
 .col3 {

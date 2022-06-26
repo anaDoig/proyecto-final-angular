@@ -1,21 +1,49 @@
+@import "../../../../assets/scss/_variables";
+@import "../../../../assets/scss/_functions";
+@import "../../../../assets/scss/_mixins";
+@import "../../../../assets/scss/_common";
+
 .card {
-    // background: $beiges;
+    background: $beige;
+    &__edit {
+        @include button($grey, transparent, rgba($grey, .25), size(80));
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin:size(15);
+    }
     &__header {
-        padding: size(40);
+        position: relative;
+        padding-top: size(30);
+        padding-bottom: size(30);
     }
     &__body {
         position: relative;
+        overflow: hidden;
+        aspect-ratio: 16/9;
     }
-/*     &__location {
-
-    } */
+    &__category {
+        margin: 0 size(40) size(15) size(40);
+    }
+    &__title {
+        margin: 0 size(40) size(15) size(40);
+    }
+    &__location {
+        margin: 0 size(40) size(20) size(40);
+    }
     .features {
-        border: 2px solid white;
+        border-top: 2px solid white;
+        @include columns-container(size(15), auto, size(20));
+        flex-basis: auto;
+        padding: size(20) size(40) 0;
 
-/*         &__title {
-        } */
+
+
+        &__title {
+            margin-bottom: size(15);
+        }
         &__content {
-            // @extend .h3;
+            @extend h3;
         }
     }
     &__image {
@@ -23,9 +51,12 @@
         height: auto;
     }
     &__button {
+        @include button($green, $white, transparent, size(50));
+        display: flex;
+        justify-content: center;
+        align-items: center;
         position: absolute;
         bottom: size(15);
         right: size(15);
-        // @include button($green, $white, transparent, size(0));
     }
 }
