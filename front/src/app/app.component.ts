@@ -21,6 +21,7 @@ export class AppComponent {
         console.log(this.journey.journeyLocal);
       },
       error => {
+        //Log error 
         console.log(error);
       }
     );
