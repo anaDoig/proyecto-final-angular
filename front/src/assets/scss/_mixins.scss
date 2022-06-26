@@ -8,10 +8,11 @@
     display: flex;
     justify-content: space-between;
     gap: $gap;
-    padding: $padding;
+    padding: 0 $padding;
+    flex-wrap: wrap;
 
     .col {
-        flex-basis: $col-size;
+        flex-basis: calc($col-size - $gap);
     }
 }
 

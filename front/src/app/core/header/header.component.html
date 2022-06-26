@@ -1,7 +1,18 @@
-<header>
-    <div class="container">
-        <a href="">
+<header class="header">
+    <div class="container header__container--flex">
+        <a routerLink="/" class="header__logo">
             <img src="../../../assets/img/UpgradeJourney_logo.svg" alt="">
         </a>
+        <nav class="header__navigation">
+            <ul class="header__navigation-list">
+                <li class="header__navigation-item">
+                    <a routerLink="/" class="header__navigation-link active">Home</a>
+                </li>
+                <li class="header__navigation-item">
+                    <a routerLink="/management" class="header__navigation-link">Gestión</a> 
+                </li>
+            </ul>
+        </nav>
+        <a href="" class="header__log-in-button">Log In</a>
     </div>
 </header>
