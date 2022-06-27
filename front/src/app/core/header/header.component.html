@@ -6,10 +6,10 @@
         <nav class="header__navigation">
             <ul class="header__navigation-list">
                 <li class="header__navigation-item">
-                    <a routerLink="/" class="header__navigation-link active">Home</a>
+                    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="header__navigation-link">Home</a>
                 </li>
                 <li class="header__navigation-item">
-                    <a routerLink="/management" class="header__navigation-link">Gestión</a> 
+                    <a routerLink="/management" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" class="header__navigation-link">Gestión</a> 
                 </li>
             </ul>
         </nav>

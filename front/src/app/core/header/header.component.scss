@@ -3,6 +3,7 @@
     width: 100%;
     z-index: 10;
     height: 115px;
+    padding-top: 55px;
 
     &__logo {
         width: 100%;
@@ -23,11 +24,19 @@
         font-weight: bold;
         display: block;
         height: 100%;
+        
 
-        &.active {
+        &:after {
+            content: "";
+            opacity: 0;
+            transition: all 0.5s;
+        }
+
+        &.active,
+        &:hover {
             position: relative;
             &:after {
-                content: "";
+                opacity: 1;
                 display: block;
                 height: 4px;
                 width: 100%;
@@ -48,12 +57,13 @@
         padding: 0 10px;
         border: 1px solid #F0EEC9;
         border-radius: 8px;
+        max-height: 45px;
     }
 }
 
 .header__container--flex {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
     height: 100%;
 }
