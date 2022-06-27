@@ -1,0 +1,45 @@
+.hero {
+    background-image: url('../../../../assets/img/hero_bg.jpg');
+    background-repeat: no-repeat;
+    background-position: 0 55%;
+    background-size: cover;
+    height: 855px;
+    margin-bottom: 130px;
+    position: relative;
+
+    &__title {
+        line-height: 95px;
+        width: 100%;
+        max-width: 835px;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+    
+    &__subtitle {
+        color: #fff;
+        margin-bottom: 50px;
+    }
+    
+    .main-btn {
+        position: relative;
+        &:after {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-image: url('../../../../assets/img/arrow-down.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            top: 13px;
+            right: 20px;
+        }
+    }
+    
+    .container {
+        position: absolute;
+        left: 50%;
+        top: 190px;
+        transform: translateX(-50%);
+    }
+}
