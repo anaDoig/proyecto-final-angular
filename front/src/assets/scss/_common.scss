@@ -12,7 +12,7 @@ h2 {
     @include titles($green, size(48));
 }
 
-h3 {
+h3, .h3 {
     @include titles($green, size(32));
 }
 
@@ -43,9 +43,6 @@ img {
 
 .col2 {
     @include columns-container(size(20), 50%, size(20));
-    div {
-        border: 1px solid #ccc;
-    }
 }
 
 .col3 {

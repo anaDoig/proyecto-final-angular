@@ -8,8 +8,8 @@
     display: flex;
     justify-content: space-between;
     gap: $gap;
-    padding: 0 $padding;
     flex-wrap: wrap;
+    padding: 0 $padding;
 
     .col {
         flex-basis: calc($col-size - $gap);
