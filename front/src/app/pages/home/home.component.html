@@ -1,4 +1,5 @@
-<section class="container">
+<app-hero></app-hero>
+<section class="container" #target>
     <div class="col2">
         <ng-container *ngFor="let journey of journeys.journeyLocal">
             <app-card-list class="col" [journey]="journey"></app-card-list>
