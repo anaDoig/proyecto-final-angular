@@ -20,6 +20,22 @@
         margin-bottom: 50px;
     }
     
+    .main-btn {
+        position: relative;
+        &:after {
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-image: url('../../../../assets/img/arrow-down.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            top: 13px;
+            right: 20px;
+        }
+    }
+    
     .container {
         position: absolute;
         left: 50%;
