@@ -1,6 +1,8 @@
-import { IRoute } from './../models/route.interface';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { IRouteOptions } from '../models/route-options.interface';
+import { IRoute } from './../models/route.interface';
+
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +24,42 @@ export class JourneyService {
     rating: 0,
     distance: 0,
     category: '',
-    id: 0
+    id: ''
+  }
+
+  journeyOptions: IRouteOptions = {
+    dificulty: [
+      'baja',
+      'media',
+      'alta',
+    ],
+    category: [
+      'A pie',
+      'A caballo',
+    ],
   }
 
   constructor(private httpClient: HttpClient) { }
+
+  //Funcion para setear a vacio el comic de nuevo
+  clearJourney() {
+    this.journeyData = {
+      title: '',
+      description: '',
+      location: '',
+      imgs: [],
+      dificulty: '',
+      rating: 0,
+      distance: 0,
+      category: '',
+      id: ''
+    }
+  }
+
+  //Setear con X comic el comicData
+  editItem(item: any) {
+    this.journeyData = item;
+  }
 
   //Funcion para hacer la petición a la API
   getRoutes() {
@@ -34,8 +68,10 @@ export class JourneyService {
 
   //Funcion para postear un nuevo journey
   postRoutes(newJourney: IRoute) {
+    console.log(this.journeyLocal.length);
     const lastId = this.journeyLocal[this.journeyLocal.length -1].id;
-    newJourney.id = lastId + 1;
+    console.log(lastId);
+    newJourney.id = Number(lastId) + 1;
     this.journeyLocal.push(newJourney);
     
   }

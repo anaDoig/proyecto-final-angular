@@ -7,5 +7,5 @@ export interface IRoute {
     rating:      number;
     distance:    number;
     category:    string;
-    id:          number;
+    id:          number | string;
 }

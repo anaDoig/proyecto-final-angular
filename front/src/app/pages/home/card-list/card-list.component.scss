@@ -4,6 +4,7 @@
     background: $beige;
     &__edit {
         @include button($grey, transparent, rgba($grey, .25), size(80));
+        cursor: pointer;
         position: absolute;
         right: 0;
         top: 0;

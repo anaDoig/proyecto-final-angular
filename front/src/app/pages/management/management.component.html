@@ -1,38 +1,41 @@
 <h1>Edit</h1>
-<form class="manage" action="">
+<form class="manage" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
   <div class="col2">
     <div class="col manage__wrapper">
       <label for="title">Título</label>
-      <input type="text" name="title" placeholder="Añadir un título de máximo 100 carácteres">
+      <input type="text" name="title" formControlName="title" placeholder="Añadir un título de máximo 100 carácteres">
     </div>
     <div class="col manage__wrapper">
       <label for="title">Categorías</label>
-      <select>
-        <option *ngFor="let item of list" [value]="item">{{item}}</option>
+      <select formControlName="category">
+        <option *ngFor="let item of routeOptions.category" [value]="item">{{item}}</option>
       </select>
     </div>
     <div class="col manage__wrapper">
       <label for="distance">Distancia</label>
-      <input type="text" name="distance" placeholder="Añadir la distancia sin comas, ni puntos">
+      <input type="text" name="distance" formControlName="distance" placeholder="Añadir la distancia sin comas, ni puntos">
       <span>km</span>
     </div>
     <div class="col manage__wrapper">
       <label for="dificulty">Dificultad</label>
-      <select>
-        <option *ngFor="let item of list" [value]="i tem">{{item}}</option>
+      <select formControlName="dificulty">
+        <option *ngFor="let item of routeOptions.dificulty" [value]="item">{{item}}</option>
       </select>
     </div>
     <div class="col manage__wrapper">
-      <label for="dificulty">Puntuación</label>
+      <label for="rating">Puntuación</label>
       <p>0 (bajo) - 5 (más alta)</p>
-      <mat-slider
+      <input name="rating" type="range" min="0" max="5" step="0.1" [value]="ratingValue" formControlName="rating">
+<!--       <mat-slider
         thumbLabel
         tickInterval="1000"
         step="0.1"
         min="0"
         max="5"
         aria-label="units"
-      ></mat-slider>
+        [value]="ratingValue"
+        formControlName="rating"
+      ></mat-slider> -->
     </div>
     <div class="col manage__wrapper">
       <label for="image">Imagen</label>
@@ -41,19 +44,21 @@
        type="file"
        name="image"
        accept="image/png, image/jpeg"
+       formControlName="imgs"
+       [value]="imageValue"
       >
     </div>
   </div>
   <div class="manage__wrapper">
     <label for="image">Descripción</label>
-    <textarea name="description" placeholder="Máximo 500 carácteres"></textarea>
+    <textarea name="description" placeholder="Máximo 500 carácteres" formControlName="description"></textarea>
   </div>
   <div class="col2">
     <div class="">
-      <button type="submit" [disabled]="!form.form.valid">Enviar</button>
+      <button type="submit">Enviar</button>
     </div>
     <div class="">
-      <button>Borrar ruta</button>
+      <button type="button" (click)="delete()">Borrar ruta</button>
     </div>
   </div>
 </form>

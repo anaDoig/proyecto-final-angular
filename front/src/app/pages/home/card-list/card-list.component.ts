@@ -1,3 +1,5 @@
+import { JourneyService } from './../../../services/journey.service';
+import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 import { IRoute } from 'src/app/models/route.interface';
 
@@ -8,9 +10,13 @@ import { IRoute } from 'src/app/models/route.interface';
 })
 export class CardListComponent implements OnInit {
   @Input() journey: any = '';
-  constructor() { }
+  constructor(private router: Router, private journeyService: JourneyService) { }
 
   ngOnInit(): void {
   }
 
+  catchJourney(journey: any) {
+    this.journeyService.editItem(journey);
+    this.router.navigate(["/management"]);
+  }
 }
