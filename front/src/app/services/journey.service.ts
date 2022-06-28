@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { IRouteOptions } from '../models/route-options.interface';
 import { IRoute } from './../models/route.interface';
 
@@ -13,7 +14,7 @@ export class JourneyService {
   httpApi: string = 'http://localhost:3000/'
 
   //Copia del Json se inicializa en app.components.ts para no modificar db.json
-  journeyLocal!: IRoute[];
+  journeyLocal!: Observable<IRoute[]>;
 
   journeyData: IRoute = {
     title: '',
@@ -67,23 +68,26 @@ export class JourneyService {
   }
 
   //Funcion para postear un nuevo journey
-  postRoutes(newJourney: IRoute) {
+/*   postRoutes(newJourney: IRoute) {
     console.log(this.journeyLocal.length);
     const lastId = this.journeyLocal[this.journeyLocal.length -1].id;
     console.log(lastId);
     newJourney.id = Number(lastId) + 1;
     this.journeyLocal.push(newJourney);
     
-  }
+  } */
   //Funcion para borrar un journey
   deleteRoutes(journeyID: number) {
-    const journeyIndex = this.journeyLocal.findIndex( journey => journey.id === journeyID);
-    this.journeyLocal.splice(journeyIndex, 1);
+    this.journeyLocal.subscribe( data => {
+      const dataIndex = data.findIndex( journey => journey.id === journeyID);
+      data.splice(dataIndex, 1);
+      console.log(data);
+    })
   }
   //Funcion para editar un journey
-  editRoutes(journeyID: number, editedJourney: IRoute) {
+/*   editRoutes(journeyID: number, editedJourney: IRoute) {
     const journeyIndex = this.journeyLocal.findIndex( journey => journey.id === journeyID);
     this.journeyLocal[journeyIndex] = editedJourney;
-  }
+  } */
 }
 

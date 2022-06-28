@@ -54,12 +54,12 @@ export class ManagementComponent implements OnInit {
     if (this.journeyID !== '') {
       //Como es distinto a "" es que hay un comic ya, por lo tanto lo vamos a editar
       console.log(this.journey.journeyLocal);
-      this.journey.editRoutes(Number(this.journeyID), this.newJourney);
+      // this.journey.editRoutes(Number(this.journeyID), this.newJourney);
       console.log(this.journey.journeyLocal);
     } else {
       //Si es "" es que no existe el comic y lo vamos a postear
       console.log(this.journey.journeyLocal);
-      this.journey.postRoutes(this.newJourney);
+      // this.journey.postRoutes(this.newJourney);
       console.log(this.journey.journeyLocal);    
     }
     //Resetar el formulario
@@ -70,7 +70,7 @@ export class ManagementComponent implements OnInit {
 
   public delete() {
     this.journey.deleteRoutes(Number(this.journeyID));
-    //Borar el formulario
+    this.journey.journeyLocal.subscribe( data => { console.log(data)});
     this.formGroup.reset();
   }
 
