@@ -1,9 +1,10 @@
 .header { 
-    position: fixed;
+    position: absolute;
     width: 100%;
     z-index: 10;
     height: 115px;
     padding-top: 55px;
+    background: linear-gradient(180deg, rgba(52, 86, 56, 0.4) 0%, rgba(52, 86, 56, 0.1) 100%);
 
     &__logo {
         width: 100%;
@@ -53,11 +54,11 @@
         color: #F0EEC9;
         text-decoration: none;
         font-size: 14px;
-        line-height: 38px;
+        line-height: 40px;
         padding: 0 10px;
         border: 1px solid #F0EEC9;
         border-radius: 8px;
-        max-height: 45px;
+        max-height: 40px;
     }
 }
 
