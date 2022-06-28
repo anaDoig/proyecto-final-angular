@@ -1,7 +1,7 @@
 .hero {
     background-image: url('../../../../assets/img/hero_bg.jpg');
     background-repeat: no-repeat;
-    background-position: 0 55%;
+    background-position: center center;
     background-size: cover;
     height: 855px;
     margin-bottom: 130px;
@@ -12,7 +12,7 @@
         width: 100%;
         max-width: 835px;
         font-weight: 600;
-        margin-bottom: 25px;
+        margin-bottom: 30px;
     }
     
     &__subtitle {
@@ -21,7 +21,13 @@
     }
     
     .main-btn {
+        display: block;
+        text-align: center;
+        line-height: 47px;
         position: relative;
+        cursor: pointer;
+        padding-right: 20px;
+
         &:after {
             content: "";
             display: block;

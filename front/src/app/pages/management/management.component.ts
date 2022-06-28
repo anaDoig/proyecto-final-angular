@@ -10,6 +10,7 @@ export class ManagementComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log("management");
   }
 
 }
