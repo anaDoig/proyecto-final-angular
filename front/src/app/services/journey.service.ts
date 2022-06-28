@@ -50,3 +50,4 @@ export class JourneyService {
     this.journeyLocal[journeyIndex] = editedJourney;
   }
 }
+
