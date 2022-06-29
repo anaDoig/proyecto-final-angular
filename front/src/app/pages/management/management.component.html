@@ -1,6 +1,7 @@
 <section class="section__manage">
 <div class="container">
   <h1>{{title[selectTitle]}}</h1>
+  <h3 *ngIf="journeyID !== ''">{{newJourney.title}}</h3>
   <form class="manage" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
     <div class="col2">
       <div class="col manage__wrapper">
