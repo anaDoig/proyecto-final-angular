@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { IRouteOptions } from '../models/route-options.interface';
 import { IRoute } from './../models/route.interface';
 
@@ -70,9 +71,7 @@ export class JourneyService {
 
   //Funcion para postear un nuevo journey
   postRoutes(newJourney: IRoute) {
-    console.log(this.journeyLocal.length);
     const lastId = this.journeyLocal[this.journeyLocal.length -1].id;
-    console.log(lastId);
     newJourney.id = Number(lastId) + 1;
     this.journeyLocal.push(newJourney);
     
