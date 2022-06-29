@@ -16,7 +16,9 @@ export class HomeComponent implements OnInit {
     this.journeys.getRoutes().subscribe(
       (data: any) => {
         // Handle result
-        this.journeys.journeyLocal = data;              
+        if(this.journeys.journeyLocal.length === 0) {
+          this.journeys.journeyLocal = data;
+        }              
       },
       error => {
         //Log error 

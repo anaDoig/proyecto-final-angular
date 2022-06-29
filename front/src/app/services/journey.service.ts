@@ -13,7 +13,7 @@ export class JourneyService {
   httpApi: string = 'http://localhost:3000/'
 
   //Copia del Json se inicializa en app.components.ts para no modificar db.json
-  journeyLocal!: IRoute[];
+  journeyLocal: IRoute[] = [];
 
   journeyData: IRoute = {
     title: '',
@@ -27,15 +27,17 @@ export class JourneyService {
     id: ''
   }
 
-  journeyOptions: IRouteOptions = {
+  journeyOptions: any = {
     dificulty: [
-      'baja',
-      'media',
-      'alta',
+      { name: 'Seleccionar dificultad', selectable: true },
+      { name: 'baja', selectable:false },
+      { name: 'media', selectable:false },
+      { name: 'alta', selectable:false },
     ],
     category: [
-      'A pie',
-      'A caballo',
+      { name: 'Seleccionar categoria', selectable: true },
+      { name: 'A pie', selectable:false },
+      { name: 'A caballo', selectable:false },
     ],
   }
 

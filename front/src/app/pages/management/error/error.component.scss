@@ -1,0 +1,8 @@
+@import '../../../../styles.scss';
+
+.text-danger {
+    display: block;
+    font-size: size(14);
+    margin-top: size(10);
+    color: $darkRed;
+}
