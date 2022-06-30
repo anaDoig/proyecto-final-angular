@@ -36,8 +36,8 @@ export class ManagementComponent implements OnInit {
       //Le asignamos como valor inicial a cada uno de los campos su campo correspondiente con newComic por si queremos editar algo existente que refleje lo que metemos en comicData
       title: [this.newJourney.title, [Validators.required, Validators.minLength(2), Validators.maxLength(60)]],
       description: [this.newJourney.description, [Validators.required, Validators.minLength(2), Validators.maxLength(400)]],
-      location: [this.newJourney.location, [Validators.required, Validators.minLength(2), Validators.maxLength(30)]],
-      imgs: [''],
+      location: [this.newJourney.location, [Validators.required, Validators.minLength(2), Validators.maxLength(40)]],
+      imgs: [this.newJourney.imgs[0], [Validators.required, Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')]],
       dificulty: [this.newJourney.dificulty, [Validators.required]],
       rating: [this.newJourney.rating, [Validators.required]],
       distance: [this.newJourney.distance, [Validators.required, Validators.pattern('^[0-9,]*$')]],
@@ -46,9 +46,9 @@ export class ManagementComponent implements OnInit {
 
     //Con esta funcion que tiene un formulario reactivo de Angular podemos capturar en un objeto de golpe el resultado de un formulario a tiempo real:
     this.formGroup.valueChanges.subscribe((changes) => {
+      const newImage = [changes.imgs, ...this.newJourney.imgs.slice(1)];
       this.newJourney = changes;
-      console.log(this.newJourney);
-      console.log(this.formGroup.controls['location'].errors);
+      this.newJourney.imgs = newImage;
     });
 
     if (this.journeyID !== '') {

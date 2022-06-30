@@ -37,17 +37,12 @@
         <app-error [formGroup]="formGroup" [name]="'location'"></app-error>
       </div>
       <div class="col manage__wrapper">
-        <label class="manage__label" for="image">Imagen</label>
-        <p>Se admite .jpg y .png</p>
-        <input class="manage__field"
-        class="manage__field" 
-        type="file"
-        name="image"
-        accept="image/png, image/jpeg"
-        [value]="imageValue"
-        (change)="onFileChange($event)"
-        >
-        <input class="manage__field" type="hidden" name="fileHidden" formControlName="imgs"/>
+        <label class="manage__label" for="imgs">Imagen url</label>
+        <div class="manage__group">
+          <input class="manage__field" type="text" name="imgs" formControlName="imgs" placeholder="Ej: https://www.google.es/google.jpg">
+          <span class="manage__text "><span class="material-symbols-outlined">image</span></span>
+        </div>
+        <app-error [formGroup]="formGroup" [name]="'imgs'"></app-error>
       </div>
       <div class="col manage__wrapper">
         <label class="manage__label" for="rating">Puntuación</label>
