@@ -1,3 +1,6 @@
+@import "../../../styles.scss";
+    
+    
 .header { 
     position: absolute;
     width: 100%;
@@ -20,7 +23,7 @@
         height: 100%;
     }
     &__navigation-link {
-        color: #F0EEC9;
+        color: $white;
         text-decoration: none;
         font-weight: bold;
         display: block;
@@ -41,7 +44,7 @@
                 display: block;
                 height: 4px;
                 width: 100%;
-                background-color: #F0EEC9;
+                background-color: $white;
                 border-radius: 5px 5px 0 0;
                 position: absolute;
                 bottom: 0;
