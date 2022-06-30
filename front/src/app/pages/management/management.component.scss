@@ -35,12 +35,18 @@ h3 {
 
 .danger-btn {
     @include button($darkRed, transparent, $darkRed, size(165));
+    @media screen and ( max-width: 769px ) {
+        max-width: none;
+    }
 }
 
 button:disabled {
     background: rgb(204, 204, 204);
     border-color: rgb(204, 204, 204);
     cursor: not-allowed;
+    @media screen and ( max-width: 769px ) {
+        max-width: none;
+    }
 }
 
 .manage {
@@ -80,7 +86,13 @@ button:disabled {
     &__field {
         @include field($green, $white);
         &--textarea {
-            height: size(100);
+            @media screen and ( min-width: 769px ) {
+                height: size(100);
+            }
+            @media screen and ( max-width: 769px ) {
+                height: size(200);
+            }
+            
         }
     }
 
@@ -105,12 +117,16 @@ button:disabled {
     }
     &__description {
         margin-bottom: size(16);
-        margin-left: -#{size(20)};
-        font-size: size(12)
+        font-size: size(12);
+        @media screen and ( min-width: 769px ) {
+            margin-left: -#{size(20)};
+        }
     }
     &__value-input {
         margin-bottom: size(16);
-        margin-left: -#{size(20)};
+        @media screen and ( min-width: 769px ) {
+            margin-left: -#{size(20)};
+        }
     }
 
     &__select {

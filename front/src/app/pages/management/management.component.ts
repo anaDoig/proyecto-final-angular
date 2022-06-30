@@ -40,7 +40,7 @@ export class ManagementComponent implements OnInit {
       imgs: [this.newJourney.imgs[0], [Validators.required, Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')]],
       dificulty: [this.newJourney.dificulty, [Validators.required]],
       rating: [this.newJourney.rating, [Validators.required]],
-      distance: [this.newJourney.distance, [Validators.required, Validators.pattern('^[0-9,]*$')]],
+      distance: [this.newJourney.distance, [Validators.required, Validators.pattern('^[0-9]{1,9}([,.][0-9]{1,4})?$')]],
       category: [this.newJourney.category, [Validators.required]],
     })
 
