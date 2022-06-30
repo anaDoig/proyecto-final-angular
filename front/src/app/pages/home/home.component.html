@@ -2,7 +2,8 @@
 <section class="container" id="homescrolltarget">
     <div class="col2">
         <ng-container *ngFor="let journey of journeys.journeyLocal">
-            <app-card-list class="col" [journey]="journey"></app-card-list>
+            <app-card-list class="col" [journey]="journey" (emitOpen)="setOpen($event)"></app-card-list>
         </ng-container>
     </div>
 </section>
+<app-detail-modal [isOpen]="isOpen" [selectedJourney]="selectedJourney" (emitClose)="closeModal($event)"></app-detail-modal>

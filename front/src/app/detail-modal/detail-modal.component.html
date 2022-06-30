@@ -1,0 +1,42 @@
+<ng-container *ngIf="show">
+    <div class="veil">
+        <div class="modal">
+            
+            <div class="modal__content">
+                <ng-template [ngTemplateOutlet]="closeIcon"></ng-template>
+                <div class="col2">
+                    <div class="col">
+                        <h4 class="modal__category">A pie</h4>
+                        <h3 class="modal__title">Los órganos de la Orotava</h3>
+                        <p class="modal__location">Cerca de Aguamansa</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam neque, voluptatem accusantium eaque praesentium id iste saepe qui numquam magnam eos magni, eveniet sit. Quia officia libero illum optio maxime?</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate repudiandae voluptates nisi eligendi ipsa perferendis deleniti commodi dolor atque sed natus, nostrum porro magni voluptate tenetur repellat velit. Tempore, adipisci!</p>
+                        <div class="modal__extra-info">
+                            <div class="col3">
+                                <div class="col">
+                                    <p class="modal__extra-info-title">Distancia</p>
+                                    <div class="extra-info-data">16,96km</div>
+                                </div>
+                                <div class="col">
+                                    <p class="modal__extra-info-title">Distancia</p>
+                                    <div class="extra-info-data">16,96km</div></div>
+                                <div class="col">
+                                    <p class="modal__extra-info-title">Distancia</p>
+                                    <div class="extra-info-data">16,96km</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        imagenes
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+
+<ng-template #closeIcon>
+    <span class="modal__close-button" (click)="show = false">X</span>
+</ng-template>

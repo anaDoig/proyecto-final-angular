@@ -1,5 +1,6 @@
 import { JourneyService } from './../../services/journey.service';
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  isOpen: boolean = false;
+  selectedJourney: any = {};
   constructor( public journeys: JourneyService) { }
 
   //Guardar el json en una array de objecto nada más iniciar la app para evitar sobrecribir el json.
@@ -23,6 +26,20 @@ export class HomeComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  setOpen(open: boolean): void {
+    this.isOpen = open;
+    console.log(this.isOpen);
+    console.log(this.journeys.selectedJourney);
+    this.selectedJourney = this.journeys.selectedJourney;
+    console.log(this.selectedJourney);
+    
+  }
+
+  closeModal(open: boolean): void {
+    this.isOpen = open;
+    console.log(this.isOpen);
   }
 
 }

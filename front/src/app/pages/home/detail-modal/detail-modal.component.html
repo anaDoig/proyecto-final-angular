@@ -1,0 +1,43 @@
+<ng-container *ngIf="isOpen">
+    <div class="veil">
+        <div class="modal">
+            
+            <div class="modal__content">
+                <ng-template [ngTemplateOutlet]="closeIcon"></ng-template>
+                <div class="col2">
+                    <div class="col">
+                        <h4 class="modal__category">{{ selectedJourney.category }}</h4>
+                        <h3 class="modal__title">{{ selectedJourney.title }}</h3>
+                        <p class="modal__location">{{ selectedJourney.location }}</p>
+                        <p>{{ selectedJourney.description }}</p>
+                        <div class="modal__extra-info">
+                            <div class="col3">
+                                <div class="col">
+                                    <p class="modal__extra-info-title">Distancia</p>
+                                    <div class="extra-info-data">{{ selectedJourney.distance }} km</div>
+                                </div>
+                                <div class="col">
+                                    <p class="modal__extra-info-title">Dificultad</p>
+                                    <div class="extra-info-data">{{ selectedJourney.dificulty }}</div></div>
+                                <div class="col">
+                                    <p class="modal__extra-info-title">Puntuación</p>
+                                    <div class="extra-info-data">{{ selectedJourney.rating }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <figure>
+                            <img [src]="selectedJourney.imgs[0]" [alt]="selectedJourney.title">
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+
+<ng-template #closeIcon>
+    <span class="modal__close-button" (click)="closeModal()">X</span>
+</ng-template>

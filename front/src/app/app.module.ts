@@ -18,6 +18,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { HeroComponent } from './pages/home/hero/hero.component';
 import { CardDetailComponent } from './pages/card-detail/card-detail.component';
 import { CardListComponent } from './pages/home/card-list/card-list.component';
+import { DetailModalComponent } from './pages/home/detail-modal/detail-modal.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { CardListComponent } from './pages/home/card-list/card-list.component';
     CardListComponent,
     CardDetailComponent,
     ManagementComponent,
+    DetailModalComponent,
   ],
   imports: [
     BrowserModule,

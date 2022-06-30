@@ -21,6 +21,6 @@
     </div>
     <div class="card__body">
         <img width="600" class="card__image" [src]="journey.imgs[0]" [alt]="journey.title">
-        <a class="card__button" href="#"><span class="material-icon material-symbols-outlined">add</span></a>
+        <a class="card__button" [attr.data-id]="journey.id" (click)="getSelectedJourneyDispatcher(journey)"><span class="material-icon material-symbols-outlined">add</span></a>
     </div>
 </article>
