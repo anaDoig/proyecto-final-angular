@@ -23,7 +23,19 @@ export class JourneyService {
     distance: 0,
     category: '',
     id: 0
-  }
+  };
+
+  selectedJourney: IRoute = {
+    title: '',
+    description: '',
+    location: '',
+    imgs: [],
+    dificulty: '',
+    rating: 0,
+    distance: 0,
+    category: '',
+    id: 0
+  };
 
   constructor(private httpClient: HttpClient) { }
 
@@ -48,6 +60,17 @@ export class JourneyService {
   editRoutes(journeyID: number, editedJourney: IRoute) {
     const journeyIndex = this.journeyLocal.findIndex( journey => journey.id === journeyID);
     this.journeyLocal[journeyIndex] = editedJourney;
+  }
+
+  //Función para obtener los datos de la ruta clickada
+  getSelectedData(item: any) {
+    this.selectedJourney = item;
+    console.log(this.selectedJourney);
+    return this.selectedJourney;
+  }
+
+  dispatchSelectedJourney() {
+    return this.getSelectedData;
   }
 }
 

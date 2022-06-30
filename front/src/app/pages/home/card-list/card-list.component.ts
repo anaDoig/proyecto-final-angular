@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { IRoute } from 'src/app/models/route.interface';
+import { JourneyService } from 'src/app/services/journey.service';
 
 @Component({
   selector: 'app-card-list',
@@ -7,10 +8,23 @@ import { IRoute } from 'src/app/models/route.interface';
   styleUrls: ['./card-list.component.scss']
 })
 export class CardListComponent implements OnInit {
+
   @Input() journey: any = '';
-  constructor() { }
+  @Output() emitOpen = new EventEmitter();
+
+  isOpen: boolean = false;
+
+  constructor(private journeyService: JourneyService) { }
 
   ngOnInit(): void {
   }
 
+  getSelectedJourneyDispatcher(selectedJourney: any) {
+    console.log("click");
+    this.journeyService.getSelectedData(selectedJourney);
+    this.isOpen = true;
+    this.emitOpen.emit(this.isOpen);
+    console.log(this.isOpen);
+  }
+  
 }
