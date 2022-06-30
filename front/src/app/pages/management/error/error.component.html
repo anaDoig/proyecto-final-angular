@@ -1,0 +1,20 @@
+<div *ngIf="formGroup.get(name).invalid && 
+        formGroup.get(name).errors && 
+        (formGroup.get(name).dirty || formGroup.get(name).touched)">
+    <small class="text-danger"
+        *ngIf="formGroup.get(name).hasError('required')">
+        Campo requerido
+    </small>
+    <small class="text-danger"
+        *ngIf="formGroup.get(name).hasError('minlength')">
+        El mínimo de carácter son {{formGroup.get(name).errors.minlength.requiredLength}}.
+    </small>
+    <small class="text-danger"
+        *ngIf="formGroup.get(name).hasError('maxlength')">
+        El máximo de carácteres son {{formGroup.get(name).errors.maxlength.requiredLength}}.
+    </small>
+    <small class="text-danger"
+        *ngIf="formGroup.get(name).hasError('pattern')">
+        El formato añadido no es el adecuado.
+    </small>
+</div>

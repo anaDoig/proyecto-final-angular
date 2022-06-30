@@ -1,1 +1,72 @@
-<p>management works!</p>
+<section class="section__manage">
+<div class="container">
+  <h1>{{title[selectTitle]}}</h1>
+  <h3 *ngIf="journeyID !== ''">{{newJourney.title}}</h3>
+  <form class="manage" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+    <div class="col2">
+      <div class="col manage__wrapper">
+        <label class="manage__label" for="title">Título</label>
+        <input class="manage__field" type="text" name="title" formControlName="title" placeholder="Añadir un título de máximo 60 carácteres">
+        <app-error [formGroup]="formGroup" [name]="'title'"></app-error>
+      </div>
+      <div class="col manage__wrapper">
+        <label class="manage__label" for="title">Categorías</label>
+        <select class="manage__select" formControlName="category">
+          <option *ngFor="let item of routeOptions.category" [value]="item.name" [disabled]="item.selectable" [hidden]="item.selectable">{{item.name}}</option>
+        </select>
+        <app-error [formGroup]="formGroup" [name]="'category'"></app-error>
+      </div>
+      <div class="col manage__wrapper">
+        <label class="manage__label" for="distance">Distancia</label>
+        <div class="manage__group">
+          <input class="manage__field" type="text" name="distance" formControlName="distance">
+          <span class="manage__text ">km</span>
+        </div>
+        <app-error [formGroup]="formGroup" [name]="'distance'"></app-error>
+      </div>
+      <div class="col manage__wrapper">
+        <label class="manage__label" for="dificulty">Dificultad</label>
+        <select class="manage__select" formControlName="dificulty">
+          <option *ngFor="let item of routeOptions.dificulty" [value]="item.name" [disabled]="item.selectable" [hidden]="item.selectable">{{item.name}}</option>
+        </select>
+        <app-error [formGroup]="formGroup" [name]="'dificulty'"></app-error>
+      </div>
+      <div class="col manage__wrapper">
+        <label class="manage__label" for="location">Localización</label>
+        <input class="manage__field" type="text" name="location" formControlName="location" placeholder="Añadir una localización de máximo 30 carácteres">
+        <app-error [formGroup]="formGroup" [name]="'location'"></app-error>
+      </div>
+      <div class="col manage__wrapper">
+        <label class="manage__label" for="imgs">Imagen url</label>
+        <div class="manage__group">
+          <input class="manage__field" type="text" name="imgs" formControlName="imgs" placeholder="Ej: https://www.google.es/google.jpg">
+          <span class="manage__text "><span class="material-symbols-outlined">image</span></span>
+        </div>
+        <app-error [formGroup]="formGroup" [name]="'imgs'"></app-error>
+      </div>
+      <div class="col manage__wrapper">
+        <label class="manage__label" for="rating">Puntuación</label>
+        <div class="col2">
+          <p class="manage__description">0 (bajo) - 5 (más alta)</p>
+          <p class="manage__value-input">{{sliderValue}}</p>
+        </div>
+        <input class="manage__slider" (input)="readValue($event)" name="rating" type="range" min="0" max="5" step="0.1" value="0" formControlName="rating">
+        <app-error [formGroup]="formGroup" [name]="'rating'"></app-error>
+      </div>
+      <div class="col manage__wrapper manage__wrapper--textarea">
+        <label class="manage__label" for="description">Descripción</label>
+        <textarea class="manage__field manage__field--textarea" name="description" placeholder="Máximo 400 carácteres" formControlName="description"></textarea>
+        <app-error [formGroup]="formGroup" [name]="'description'"></app-error>
+      </div>
+    </div>
+    <div class="col2">
+      <div class="">
+        <button *ngIf="journeyID !== ''" class="danger-btn" type="button" (click)="delete()">Borrar ruta</button>
+      </div>
+      <div class="">
+        <button class="secondary-btn" type="submit" [disabled]="!formGroup.valid">Enviar</button>
+      </div>
+    </div>
+  </form>
+</div>
+</section>
