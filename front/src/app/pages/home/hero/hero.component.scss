@@ -1,3 +1,5 @@
+@import "../../../../styles";
+    
 .hero {
     background-image: url('../../../../assets/img/hero_bg.jpg');
     background-repeat: no-repeat;
@@ -13,11 +15,25 @@
         max-width: 835px;
         font-weight: 600;
         margin-bottom: 30px;
+
+        @media screen and ( max-width: 769px ) {
+            font-size: size(40);
+            line-height: size(40);
+            width: 100%;
+            max-width: 315px;
+            margin-bottom: size(50);
+        }
     }
     
     &__subtitle {
         color: #fff;
         margin-bottom: 50px;
+
+        @media screen and ( max-width: 769px ) {
+            font-size: size(22);
+            width: 100%;
+            max-width: size(315);
+        }
     }
     
     .main-btn {
@@ -47,5 +63,9 @@
         left: 50%;
         top: 190px;
         transform: translateX(-50%);
+    }
+
+    @media screen and ( max-width: 769px ) {
+        height: size(685);
     }
 }

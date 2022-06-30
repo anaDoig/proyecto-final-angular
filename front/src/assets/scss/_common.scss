@@ -47,6 +47,10 @@ img {
 
 .col2 {
     @include columns-container(size(20), 50%, size(20));
+
+    @media screen and ( max-width: 769px ) {
+        padding: 0;
+    }
 }
 
 .col3 {
