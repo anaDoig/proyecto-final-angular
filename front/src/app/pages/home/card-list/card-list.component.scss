@@ -2,6 +2,8 @@
 
 .card {
     background: $beige;
+    border-radius: size(8);
+    margin-bottom: size(24);
     &__edit {
         @include button($grey, transparent, rgba($grey, .25), size(80));
         cursor: pointer;
@@ -19,6 +21,7 @@
         position: relative;
         overflow: hidden;
         aspect-ratio: 16/9;
+        border-radius: 0 0 size(8) size(8);
     }
     &__category {
         margin: 0 size(40) size(15) size(40);

@@ -28,6 +28,19 @@ export class ManagementComponent implements OnInit {
   constructor(public journey : JourneyService, private formBuilder: FormBuilder, private router: Router) {}
 
   ngOnInit(): void {
+
+    this.journey.getRoutes().subscribe(
+      (data: any) => {
+        // Handle result
+        if(this.journey.journeyLocal.length === 0) {
+          this.journey.journeyLocal = data;
+        }              
+      },
+      error => {
+        //Log error 
+        console.log(error);
+      }
+    );
     
     //Vaciamos el comic nada más arrancar nuestro formulario para asegurarnos de que no se ha quedado nada almacenado
     this.journey.clearJourney();
@@ -68,7 +81,6 @@ export class ManagementComponent implements OnInit {
   public onSubmit() {
     if (this.journeyID !== '') {
       //Como es distinto a "" es que hay un comic ya, por lo tanto lo vamos a editar
-      console.log(this.journey.journeyLocal);
       this.journey.editRoutes(Number(this.journeyID), this.newJourney);
       Swal.fire({
         position: 'top-end',
@@ -79,7 +91,6 @@ export class ManagementComponent implements OnInit {
       })
     } else {
       //Si es "" es que no existe el comic y lo vamos a postear
-      console.log(this.journey.journeyLocal);
       this.journey.postRoutes(this.newJourney);
       Swal.fire({
         position: 'top-end',

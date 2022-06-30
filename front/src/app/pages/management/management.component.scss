@@ -35,17 +35,20 @@ h3 {
 
 .danger-btn {
     @include button($darkRed, transparent, $darkRed, size(165));
-    @media screen and ( max-width: 769px ) {
-        max-width: none;
-    }
 }
 
-button:disabled {
-    background: rgb(204, 204, 204);
-    border-color: rgb(204, 204, 204);
-    cursor: not-allowed;
+button {
+    @media screen and ( min-width: 769px ) {
+        width: 100vw !important;
+        max-width: 25vw !important;
+    }
     @media screen and ( max-width: 769px ) {
-        max-width: none;
+        max-width: none !important;
+    }
+    &:disabled {
+        background: rgb(204, 204, 204);
+        border-color: rgb(204, 204, 204);
+        cursor: not-allowed;
     }
 }
 

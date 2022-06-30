@@ -102,7 +102,6 @@ export class JourneyService {
   //Función para obtener los datos de la ruta clickada
   getSelectedData(item: any) {
     this.selectedJourney = item;
-    console.log(this.selectedJourney);
     return this.selectedJourney;
   }
 

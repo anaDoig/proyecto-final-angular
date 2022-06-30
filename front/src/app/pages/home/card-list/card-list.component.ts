@@ -21,11 +21,9 @@ export class CardListComponent implements OnInit {
   }
 
   getSelectedJourneyDispatcher(selectedJourney: any) {
-    console.log("click");
     this.journeyService.getSelectedData(selectedJourney);
     this.isOpen = true;
     this.emitOpen.emit(this.isOpen);
-    console.log(this.isOpen);
   }
   
   catchJourney(journey: any) {

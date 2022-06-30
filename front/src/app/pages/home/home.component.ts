@@ -16,9 +16,7 @@ export class HomeComponent implements OnInit {
 
   //Guardar el json en una array de objecto nada más iniciar la app para evitar sobrecribir el json.
   //Se trabajará con la array, almenos durante el desarrollo.
-  ngOnInit(): void {       
-    console.log('iniciar');
-     
+  ngOnInit(): void {           
     this.journeys.getRoutes().subscribe(
       (data: any) => {
         // Handle result
@@ -35,16 +33,11 @@ export class HomeComponent implements OnInit {
 
   setOpen(open: boolean): void {
     this.isOpen = open;
-    console.log(this.isOpen);
-    console.log(this.journeys.selectedJourney);
-    this.selectedJourney = this.journeys.selectedJourney;
-    console.log(this.selectedJourney);
-    
+    this.selectedJourney = this.journeys.selectedJourney;    
   }
 
   closeModal(open: boolean): void {
     this.isOpen = open;
-    console.log(this.isOpen);
   }
   
   trackItem(index: number, item: any) {
