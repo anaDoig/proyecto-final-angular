@@ -26,24 +26,66 @@
         margin-bottom: size(20);
     }
     
-    p {
+    &__text {
         margin-bottom: size(30);
     }
     
     .col2 {
         padding: 0;
+        gap: 0;
+        .col {
+            flex-basis: 50%;
+            &--left-column {
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+        }
     }
-    
-    .col:first-child {
-        padding: 20px;
+
+    &__content {
+        padding: size(30);
     }
     
     &__close-button {
         position: absolute;
-        width: 30px;
-        height: 30px;
-        background-color: $beige;
+        width: size(45);
+        height: size(45);
+        background-color: $white;
         top: size(10);
         right: size(10);
+        cursor: pointer;
+    }
+    
+    &__extra-info {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        width: 100%;
+        border-top: 2px solid $beige;
+        padding: size(30);
+    }
+
+    &__extra-info-title {
+        margin-bottom: 10px;
+    }
+
+    &__extra-info-data {
+        font-size: size(24);
+        font-weight: 700;
+        color: $green;
+        text-transform: capitalize;
+    }
+
+    &__figure {
+        width: 100%;
+        height: 100%;
+    }
+    
+    &__img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 }
