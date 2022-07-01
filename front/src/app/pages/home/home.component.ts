@@ -12,15 +12,17 @@ export class HomeComponent implements OnInit {
 
   //Guardar el json en una array de objecto nada más iniciar la app para evitar sobrecribir el json.
   //Se trabajará con la array, almenos durante el desarrollo.
-  ngOnInit(): void {       
+  ngOnInit(): void {     
+    // this.journeys.journeyLocal.subscribe(arg => arg = []);  
     console.log('iniciar');
      
     this.journeys.getRoutes().subscribe(
       (data: any) => {
-        // Handle result
-        if(this.journeys.journeyLocal.length === 0) {
-          this.journeys.journeyLocal = data;
-        }              
+        this.journeys.journeyLocal.subscribe( arg => {
+          if(arg.length === 0) {
+            arg = Object.assign(arg, data);
+          }
+        });           
       },
       error => {
         //Log error 

@@ -1,6 +1,7 @@
+// import { JourneyService } from './journey.service';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { IRouteOptions } from '../models/route-options.interface';
 import { IRoute } from './../models/route.interface';
 
@@ -13,8 +14,8 @@ export class JourneyService {
   //baseUrl from Api
   httpApi: string = 'http://localhost:3000/'
 
-  //Copia del Json se inicializa en app.components.ts para no modificar db.json
-  journeyLocal: IRoute[] = [];
+  //Copia del Json se inicializa en app.components.ts para no modificar db.json 
+  journeyLocal: Observable<IRoute[]> = of([]);
 
   journeyData: IRoute = {
     title: '',
@@ -42,7 +43,8 @@ export class JourneyService {
     ],
   }
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { 
+  }
 
   //Funcion para setear a vacio el comic de nuevo
   clearJourney() {
@@ -70,21 +72,36 @@ export class JourneyService {
   }
 
   //Funcion para postear un nuevo journey
-  postRoutes(newJourney: IRoute) {
-    const lastId = this.journeyLocal[this.journeyLocal.length -1].id;
+/*   postRoutes(newJourney: IRoute) {
+    this.journeyLocal[this.journeyLocal.length -1].id;
     newJourney.id = Number(lastId) + 1;
     this.journeyLocal.push(newJourney);
-    
+  } */
+  postRoutes(newJourney: IRoute) {
+    this.journeyLocal.subscribe(arg => {
+      const lastId = arg[arg.length -1].id;
+      newJourney.id = Number(lastId) + 1;
+      arg.push(newJourney);
+    });
   }
+
   //Funcion para borrar un journey
-  deleteRoutes(journeyID: number) {
+/*   deleteRoutes(journeyID: number) {
     const journeyIndex = this.journeyLocal.findIndex( journey => journey.id === journeyID);
     this.journeyLocal.splice(journeyIndex, 1);
+  } */
+  deleteRoutes(journeyID : number) {
+    this.journeyLocal.subscribe(arg => {
+    const journeyIndex = arg.findIndex( journey => journey.id === journeyID);
+    arg.splice(journeyIndex, 1);
+    });
   }
   //Funcion para editar un journey
   editRoutes(journeyID: number, editedJourney: IRoute) {
-    const journeyIndex = this.journeyLocal.findIndex( journey => journey.id === journeyID);
-    this.journeyLocal[journeyIndex] = editedJourney;
+    this.journeyLocal.subscribe(arg => {
+    const journeyIndex = arg.findIndex( journey => journey.id === journeyID);
+    arg[journeyIndex] = editedJourney;
+    });
   }
 }
 
