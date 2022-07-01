@@ -19,6 +19,7 @@ import { HeroComponent } from './pages/home/hero/hero.component';
 import { CardDetailComponent } from './pages/card-detail/card-detail.component';
 import { CardListComponent } from './pages/home/card-list/card-list.component';
 import { DetailModalComponent } from './pages/home/detail-modal/detail-modal.component';
+import { ErrorComponent } from './pages/management/error/error.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { DetailModalComponent } from './pages/home/detail-modal/detail-modal.com
     CardDetailComponent,
     ManagementComponent,
     DetailModalComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,

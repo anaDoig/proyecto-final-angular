@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IRoute } from 'src/app/models/route.interface';
 import { JourneyService } from 'src/app/services/journey.service';
 
@@ -14,17 +15,19 @@ export class CardListComponent implements OnInit {
 
   isOpen: boolean = false;
 
-  constructor(private journeyService: JourneyService) { }
+  constructor(private router: Router, private journeyService: JourneyService) { }
 
   ngOnInit(): void {
   }
 
   getSelectedJourneyDispatcher(selectedJourney: any) {
-    console.log("click");
     this.journeyService.getSelectedData(selectedJourney);
     this.isOpen = true;
     this.emitOpen.emit(this.isOpen);
-    console.log(this.isOpen);
   }
   
+  catchJourney(journey: any) {
+    this.journeyService.editItem(journey);
+    this.router.navigate(["/management"]);
+  }
 }

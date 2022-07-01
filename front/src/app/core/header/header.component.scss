@@ -9,6 +9,10 @@
     padding-top: 55px;
     background: linear-gradient(180deg, rgba(52, 86, 56, 0.4) 0%, rgba(52, 86, 56, 0.1) 100%);
 
+    &.inHome {
+        background: #2D5C0B;
+    }
+
     &__logo {
         width: 100%;
         max-width: 185px;

@@ -13,12 +13,10 @@ export class DetailModalComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.isOpen);
   }
 
   closeModal() {
     this.isOpen = false;
-    console.log(this.isOpen);
     this.emitClose.emit(this.isOpen);
   }
 }

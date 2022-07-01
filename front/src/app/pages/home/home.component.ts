@@ -1,11 +1,12 @@
 import { JourneyService } from './../../services/journey.service';
 import { Component, OnInit } from '@angular/core';
 import { Subject } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
 
@@ -15,11 +16,13 @@ export class HomeComponent implements OnInit {
 
   //Guardar el json en una array de objecto nada más iniciar la app para evitar sobrecribir el json.
   //Se trabajará con la array, almenos durante el desarrollo.
-  ngOnInit(): void {        
+  ngOnInit(): void {           
     this.journeys.getRoutes().subscribe(
       (data: any) => {
         // Handle result
-        this.journeys.journeyLocal = data;              
+        if(this.journeys.journeyLocal.length === 0) {
+          this.journeys.journeyLocal = data;
+        }              
       },
       error => {
         //Log error 
@@ -30,16 +33,15 @@ export class HomeComponent implements OnInit {
 
   setOpen(open: boolean): void {
     this.isOpen = open;
-    console.log(this.isOpen);
-    console.log(this.journeys.selectedJourney);
-    this.selectedJourney = this.journeys.selectedJourney;
-    console.log(this.selectedJourney);
-    
+    this.selectedJourney = this.journeys.selectedJourney;    
   }
 
   closeModal(open: boolean): void {
     this.isOpen = open;
-    console.log(this.isOpen);
+  }
+  
+  trackItem(index: number, item: any) {
+    return item.trackId;
   }
 
 }

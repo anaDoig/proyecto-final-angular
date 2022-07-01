@@ -1,0 +1,145 @@
+@import '../../../styles.scss';
+
+@mixin field ($color, $background-color) {
+    font-family: $fontFamily;
+    display: block;
+    width: 100%;
+    padding: size(5) size(15);
+    font-size: size(16);
+    line-height: 1.5;
+    color: $color;
+    border: 1px solid transparent;
+    appearance: none;
+    border-radius: size(5);
+    background-color: $background-color;
+    background-clip: padding-box;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    height: size(50);
+}
+
+.section__manage {
+    background: $beige;
+    padding-top: size(180);
+    padding-bottom: 10vh;
+    min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    color: $green;
+    margin-bottom: size(20);
+}
+h3 {
+    text-align: center; 
+}
+
+.danger-btn {
+    @include button($darkRed, transparent, $darkRed, size(165));
+}
+
+button {
+    @media screen and ( min-width: 769px ) {
+        width: 100vw !important;
+        max-width: 25vw !important;
+    }
+    @media screen and ( max-width: 769px ) {
+        max-width: none !important;
+    }
+    &:disabled {
+        background: rgb(204, 204, 204);
+        border-color: rgb(204, 204, 204);
+        cursor: not-allowed;
+    }
+}
+
+.manage {
+    margin-top: 10vh;
+    &__group {
+        position: relative;
+        display: flex;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    &__wrapper {
+        margin-bottom: size(35);
+    }
+
+    &__label {
+        display: block;
+        color: $green;
+        margin-bottom: size(10);
+    }
+
+    &__text {
+        display: flex;
+        align-items: center;
+        padding: size(5) size(15);
+        font-size: size(16);
+        line-height: 1.5;
+        color: $grey;
+        text-align: center;
+        white-space: nowrap;
+        background-color: $white;
+        border-left: 1px solid $grey;
+        border-radius: 0 size(5) size(5) 0;
+        margin-left:-5px;
+    }
+
+    &__field {
+        @include field($green, $white);
+        &--textarea {
+            @media screen and ( min-width: 769px ) {
+                height: size(100);
+            }
+            @media screen and ( max-width: 769px ) {
+                height: size(200);
+            }
+            
+        }
+    }
+
+    &__slider {
+        width:100%;
+        appearance: none;
+        height: 4px; /* Specified height */
+        background: $white; /* Grey background */
+        outline: none; /* Remove outline */
+        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+        transition: opacity .2s;
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: size(16);
+            height: size(16);
+            border-radius: 50%; 
+            background: $green;
+            cursor: pointer;
+        }
+    }
+    &__description {
+        margin-bottom: size(16);
+        font-size: size(12);
+        @media screen and ( min-width: 769px ) {
+            margin-left: -#{size(20)};
+        }
+    }
+    &__value-input {
+        margin-bottom: size(16);
+        @media screen and ( min-width: 769px ) {
+            margin-left: -#{size(20)};
+        }
+    }
+
+    &__select {
+        @include field($green, $white);
+        -moz-padding-start: calc(0.75rem - 3px);
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right .75rem center;
+        background-size: 16px 12px;
+        border-radius: size(5);
+    }
+}
+
