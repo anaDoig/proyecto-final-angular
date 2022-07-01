@@ -1,0 +1,45 @@
+@import "../../../styles.scss";
+
+.footer {
+    background-color: $darkGreen;
+    text-align: center;
+    position: relative;
+    padding: size(40);
+
+    &:before,
+    &:after {
+        content: "";
+        width: 100%;
+        height: size(20);
+        width: 40%;
+        background-color: $darkGreen;
+        position: absolute;
+        top: -20px;
+        
+    }
+    
+    &:before {
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
+        left: 0;
+    }
+    
+    &:after {
+        clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+        right: 0;
+    }
+
+    &__logo {
+        width: 100%;
+        max-width: 185px;
+        display: inline-block;
+        margin-bottom: size(40);
+    }
+    
+    &__copyright {
+        border-top: 1px solid $white;
+        color: $white;
+        font-size: size(14);
+        padding-top: size(30);
+    }
+
+}
