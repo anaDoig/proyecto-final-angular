@@ -3,20 +3,29 @@
 .footer {
     background-color: $darkGreen;
     text-align: center;
-    margin-top: size(70);
     position: relative;
     padding: size(40);
 
-    &:before {
+    &:before,
+    &:after {
         content: "";
         width: 100%;
-        height: size(15);
-        background-image: url('../../../assets/img/footer_bg_shape.svg');
-        background-repeat: no-repeat;
-        background-size: 100%;
+        height: size(20);
+        width: 40%;
+        background-color: $darkGreen;
         position: absolute;
-        top: 0;
+        top: -20px;
+        
+    }
+    
+    &:before {
+        clip-path: polygon(0% 0%, 0% 100%, 100% 100%);
         left: 0;
+    }
+    
+    &:after {
+        clip-path: polygon(100% 0%, 0% 100%, 100% 100%);
+        right: 0;
     }
 
     &__logo {
